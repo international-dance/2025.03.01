@@ -1,0 +1,107 @@
+/*  MARK: LAYOUT
+*/
+
+:root {
+  --max-column-width: 300px;
+  --gap: 1rem;
+  z-index: 0;
+}
+
+html,
+body {
+  display: block;
+  overflow: clip;
+}
+
+app-container {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto auto;
+  overflow: clip;
+  height: 100dvh;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  app-logo {
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+  }
+
+  app-user {
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+  }
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: end;
+
+  input {
+    position: absolute;
+    left: -200dvw;
+  }
+
+  label {
+    display: block;
+    padding: 0.5rem 1rem;
+    word-break: nobreak;
+    cursor: pointer;
+    word-break: keep-all;
+    width: max-content;
+  }
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+}
+
+article {
+  display: none;
+  grid-template-columns: 1fr;
+  overflow: overlay;
+  align-content: start;
+  overflow-x: hidden;
+  transition: opacity 0.25s;
+  opacity: 0;
+}
+
+aside {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  app-copy {
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+  }
+
+  app-social {
+    /*display: grid;
+    grid-template-columns: repeat(auto-fit, 1em);
+    padding: 0.5rem;*/
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+
+      svg {
+        width: 2rem;
+        height: 1rem;
+        fill: currentColor;
+      }
+    }
+  }
+}
